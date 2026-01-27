@@ -128,12 +128,13 @@ void MainWindow::on_btnAgregar_clicked()
         return;
     }
 
-    for (const auto& c : celulares) {
-        if (c.id == id) {
-            QMessageBox::warning(this, "ERROR", "El ID ya existe 👀");
-            return;
-        }
+   for (int i = 0; i < celulares.size(); i++) {
+    if (celulares[i].id == id) {
+        QMessageBox::warning(this, "ERROR", "El ID ya existe 👀");
+        return;
     }
+}
+
 
     Celular c;
     c.id = id;
